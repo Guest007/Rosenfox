@@ -34,4 +34,16 @@ Pure, fast and secure settings for Mozilla Firefox (about:config and user.js onl
 
 **000/ ЛИЦЕНЗИРОВАНИЕ И ДАЛЬНЕЙШЕЕ РАСПРОСТРАНЕНИЕ**
 
-Настоящее руководство распространяется по свободной лицензии GNU Free Documentation License (в ее текущей версии). Вся сторонняя информация, цитируемая в руководстве, почерпнута из публичных открытых источников, на которые приводятся активные ссылки.
+Настоящее руководство распространяется по свободной лицензии GNU Free Documentation License (в ее текущей версии):
+
+http://www.gnu.org/licenses/fdl-1.3.en.html
+
+Вся сторонняя информация, цитируемая в руководстве, почерпнута из публичных открытых источников, на которые приводятся активные ссылки.
+
+Вы вправе свободно копировать, видоизменять и распространять данное руководство, соблюдая условия, определяемые лицензией GNU FDL; с указанием авторства составителя документа - **Rami Rosenfeld** - и активной ссылкой на проект:
+
+**2016 Rami Rosenfeld - https://github.com/RamiRosenfeld/Rosenfox**
+
+*Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.*
+
+
