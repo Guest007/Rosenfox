@@ -1,15 +1,18 @@
-// user_pref("browser.search.countryCode", "US");
-// user_pref("browser.search.geoip.url", false);
-// user_pref("browser.search.region", "US");
-// user_pref("browser.selfsupport.url", "");
-// user_pref("experiments.logging.dump", false);
+// ATTENTION! Don't copy this file to new Firefox profile! Please insert preferred strings in about:config manually!
+
+// user_pref("browser.search.countryCode", "US"); // needs to additional check
+// user_pref("browser.search.geoip.url", false); // needs to additional check
+// user_pref("browser.search.region", "US"); // needs to additional check
+// user_pref("browser.selfsupport.url", ""); // needs to additional check
+// user_pref("experiments.logging.dump", false); // needs to additional check
 // user_pref("media.audio_data.enabled", false);  // Android
-// user_pref("media.websocket.enabled", false);
-// user_pref("network.dns.disablePrefetchFromHTTPS", true);
+// user_pref("media.websocket.enabled", false); // needs to additional check
+// user_pref("network.dns.disablePrefetchFromHTTPS", true); // needs to additional check
 // user_pref("network.http.sendSecureXSiteReferrer", false); // Android
-// user_pref("network.http.spdy.enabled.deps);  // maybe obsolete
-// user_pref("network.seer.enabled", false); // maybe obsolete
-// user_pref("network.seer.max-db-size", 0);  // maybe obsolete
+// user_pref("network.http.spdy.enabled.deps);  // maybe obsolete // needs to additional check
+// user_pref("network.seer.enabled", false); // maybe obsolete // needs to additional check
+// user_pref("network.seer.max-db-size", 0);  // maybe obsolete // needs to additional check
+
 user_pref("accessibility.blockautorefresh", true);
 user_pref("alerts.disableSlidingEffect", true);
 user_pref("app.feedback.baseURL", "");
