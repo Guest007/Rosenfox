@@ -1,3 +1,5 @@
+*(Sorry, English is not my native language)*
+
 ## I. CREATE NEW PROFILE
 
 Use the Profile Manager to create new Firefox profile. 
