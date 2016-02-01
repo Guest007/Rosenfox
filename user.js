@@ -1,5 +1,7 @@
-// ATTENTION! Don't copy this file to new Firefox profile! Please insert preferred strings in about:config manually!
-
+// This is ABC-sorted lists of preferences
+//
+// ATTENTION! Don't copy this file to new Firefox profile! Please insert preferred strings in about:config manually, one-by-one!
+//
 // user_pref("browser.search.countryCode", "US"); // needs to additional check
 // user_pref("browser.search.geoip.url", false); // needs to additional check
 // user_pref("browser.search.region", "US"); // needs to additional check
