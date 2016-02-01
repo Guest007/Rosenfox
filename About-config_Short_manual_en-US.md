@@ -1,6 +1,6 @@
 ## I. CREATE NEW PROFILE
 
-Use the Profile Manager to create new Firefox profile. In Linux Terminal run:
+Use the Profile Manager to create new Firefox profile. 
 
 LINUX:
 
@@ -63,21 +63,25 @@ Attention: Change "http://www.safe-site-1.com  https://safe-site-2.net" etc. to 
 
 The Web Applications specification defines a mechanism allowing web pages to store information with a web browser - client-side session and persistent storage. Switch to:
 
-   dom.storage.enabled=false
+    dom.storage.enabled=false
 
 http://kb.mozillazine.org/Dom.storage.enabled
+
 https://en.wikipedia.org/wiki/Document_Object_Model
 
 - DOM JavaScript
 
 When a web page is loaded, the browser creates a Document Object Model of the page. To prevent probably not-secure or potentially dangerous actions:
 
-JavaScript can add, change, and remove all the HTML elements and attributes in the page;
-JavaScript can change all the CSS styles in the page;
-JavaScript can react to all existing events in the page;
-JavaScript can create new events in the page
+a) JavaScript can add, change, and remove all the HTML elements and attributes in the page.
 
-you must set:
+b) JavaScript can change all the CSS styles in the page.
+
+c) JavaScript can react to all existing events in the page.
+
+d) JavaScript can create new events in the page.
+
+You must set:
 
     dom.allow_scripts_to_close_windows=false
     dom.disable_window_flip=true
@@ -225,7 +229,7 @@ http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer
 - REDIRECTIONS
 
 Block redirections to another page without user's decision and set the limit of redirections:
- 
+     
     network.http.prompt-temp-redirect=true
     network.http.redirection-limit=1
 
@@ -249,6 +253,7 @@ Popups blocking and enabling info message when pop-ups are blocked:
     browser.popups.showPopupBlocker=true
 
 http://kb.mozillazine.org/Pop-ups_not_blocked
+
 https://support.mozilla.org/en-US/questions/675692
 
 To get around the default popup blocker, some sites use Flash or Java applets to open unrequested windows. This preference controls popups initiated by plugins. Block all plugin initiated popups:
@@ -282,6 +287,7 @@ Suppress the display of site icons. Display the default Mozilla “document” i
     browser.chrome.favicons=false
 
 http://kb.mozillazine.org/Browser.chrome.site_icons
+
 http://kb.mozillazine.org/Browser.chrome.favicons
 
 
@@ -328,7 +334,9 @@ Attempt to use pipelining in HTTP 1.1 connections. Disable ssl-pipelining:
     network.http.version=1.1 (don't create: it's default)
 
 http://kb.mozillazine.org/Network.http.pipelining
+
 http://kb.mozillazine.org/Network.http.pipelining.ssl
+
 http://kb.mozillazine.org/Network.http.version
 
 Attempt to use pipelining through proxy-server:
@@ -337,6 +345,7 @@ Attempt to use pipelining through proxy-server:
     network.http.proxy.version=1.1 (don't create: it's default)
 
 http://kb.mozillazine.org/Network.http.proxy.keep-alive
+
 http://kb.mozillazine.org/Network.http.proxy.version
 
 Check this settings to keep-alive pipelining:
@@ -407,7 +416,7 @@ Block non-safe algorithms (SSL3):
 
 - TOR, PROXY
 
-Attention: Do not change this settings if you don't understand what you are doing!
+**Attention: Do not change this settings if you don't understand what you are doing!**
 
 To retrieve data, Mozilla can be configured to route its requests through another server:  
 
@@ -422,12 +431,17 @@ http://kb.mozillazine.org/Network.proxy.type
 If proxy ON (for example - Polipo proxy), you must set HTTP, SSL, FTP protocols to:
 
 HTTP:
+
     network.proxy.http=localhost
     network.proxy.http_port=8118
+    
 SSL:
+
     network.proxy.ssl=localhost
     network.proxy.ssl_port=8118
+    
 FTP:
+
     network.proxy.ftp=localhost
     network.proxy.ftp_port=8118
 
@@ -446,6 +460,7 @@ SOCKS:
     network.proxy.socks_port=9050
 
 http://kb.mozillazine.org/Network.proxy.socks_version
+
 http://kb.mozillazine.org/Network.proxy.socks_port
 
 No proxy for localhost. Many networks had limited access to the public network via proxy servers. This preference was originally designed as a "black-list" of sites or domains that was within the intranet, and should not be accessed via the proxy server: 
@@ -537,7 +552,7 @@ Permissible settings:
 
 Deny Plugin-container. Each plugin are loaded separately from Firefox in a plugin-container.exe process, allowing the main Firefox process (firefox.exe) to stay open if a plugin crashes. Plugin-container needs a lot of RAM:
 
-    dom.ipc.plugins.enabled=false
+    dom.ipc.plugins.enabled=false (maybe not work)
 
 https://support.mozilla.org/en-US/kb/what-is-plugin-container
 
@@ -618,6 +633,7 @@ Number of crashes that can occur before the about:sessionrestore page is display
     browser.sessionstore.max_resumed_crashes=0
 
 http://kb.mozillazine.org/Browser.sessionstore.max_resumed_crashes
+
 https://wiki.mozilla.org/Firefox/session_restore
 
 Block history and history of downloads in Places. Places is a system for storing bookmarks, history, and other user information about the Web: 
@@ -700,7 +716,8 @@ Automatically decide the maximum memory to use to cache decoded images, messages
 
 Possible values:
 
-0 - Do not cache decoded images and chrome in memory (not recommended; see below);
+"0" - Do not cache decoded images and chrome in memory (not recommended; see below);
+
 Any positive integer - maximum amount of memory in KB to use to cache decoded images and chrome (1 MB = 1024 KB).
 
 Atention: Switch "browser.cache.memory.enable" to true.
@@ -844,6 +861,7 @@ Do not scan downloads for viruses. If a Windows user has an antivirus program in
     browser.download.manager.scanWhenDone=false
 
 http://kb.mozillazine.org/Browser.download.manager.scanWhenDone
+
 https://support.mozilla.org/en-US/kb/cant-download-or-save-files
 
 Do not add downloaded files to Recent Documents:
@@ -851,6 +869,7 @@ Do not add downloaded files to Recent Documents:
     browser.download.manager.addToRecentDocs=false
 
 https://developer.mozilla.org/en-US/docs/Download_Manager_preferences
+
 http://kb.mozillazine.org/Browser.download.manager.addToRecentDocs
 
 Restrict jar: to files served with the proper Content-Types (*.jar, *.zip, etc.). Mozilla supports the jar: protocol, which allows the browser to directly load files inside JAR archives (and other files based on ZIP). Unfortunately, this feature can open up cross-site scripting issues on otherwise secure sites, by allowing script content to be loaded inside pages with the same permissions as the page itself. Switch to:
@@ -870,7 +889,9 @@ Most major websites track their visitors' behavior and then sell or provide that
     privacy.donottrackheader.value=1
 
 http://kb.mozillazine.org/Privacy.donottrackheader.enabled
+
 http://kb.mozillazine.org/Privacy.donottrackheader.value
+
 https://support.mozilla.org/en-US/kb/how-do-i-turn-do-not-track-feature
 
 Firefox include built-in tracking protection. In Private Browsing windows (tabs, in Firefox for Android), Firefox will block content loaded from domains that track users across sites. Firefox will ship with a list of sites which have been identified as engaging in cross-site tracking of users. When tracking protection is enabled, Firefox will block content from sites in the list. But you have a potential risk to disclose own preferences (web-activity). Block this function:
@@ -901,7 +922,6 @@ Block Google's SafeBrowsing. About twice per hour, Firefox downloads Google's Sa
     browser.safebrowsing.downloads.remote.enabled=false
     services.sync.prefs.sync.browser.safebrowsing.enabled=false
     services.sync.prefs.sync.browser.safebrowsing.malware.enabled=false
-
     browser.safebrowsing.appRepURL=
     browser.safebrowsing.gethashURL=
     browser.safebrowsing.malware.reportURL=
@@ -914,6 +934,7 @@ Block Google's SafeBrowsing. About twice per hour, Firefox downloads Google's Sa
     browser.safebrowsing.updateURL=
 
 http://kb.mozillazine.org/Browser.safebrowsing.enabled
+
 http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
 
 
@@ -931,13 +952,11 @@ Deny Firefox Sync. Firefox Sync is a set of software components and specificatio
     services.sync.statusURL=
     services.sync.syncKeyHelpURL=
     services.sync.termsURL=
-
     identity.fxaccounts.auth.uri=
     identity.fxaccounts.remote.force_auth.uri=
     identity.fxaccounts.remote.signin.uri=
     identity.fxaccounts.remote.signup.uri=
     identity.fxaccounts.settings.uri=
-
     services.sync.engine.addons=false
     services.sync.engine.bookmarks=false
     services.sync.engine.history=false
@@ -994,6 +1013,7 @@ You must(!) create two boolean strings (if they are not present):
     pageThumbs.enabled=false
 
 https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
+
 https://support.mozilla.org/en-US/questions/973320
 
 
@@ -1002,7 +1022,6 @@ https://support.mozilla.org/en-US/questions/973320
 Deny snippets. Firefox's default home page (about:home) loads small bits of information right below the search bar that we think will be useful to you. We call these "snippets". About once per day, Firefox connects to Mozilla and provides you with new snippets, if available. Mozilla may collect how often snippets are clicked, snippet name, browser locale, and which version of Firefox you're using. We only retain this information after 60 days in aggregate form. To help display relevant snippets, Firefox sends Mozilla a monthly request to look up your location at a country level using your IP address. Then Mozilla send that country level information back to Firefox, where it's stored locally. Firefox will then choose snippets to show you based on the locally stored country information. Some Mozilla sponsored snippets are interactive and allow you to optionally share your phone number or email address. It's very dangerous and must be disabled:
 
     browser.aboutHomeSnippets.updateUrl=
-
     browser.snippets.countryCode=US (Android only)
 
 https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service
@@ -1039,6 +1058,7 @@ Block Firefox Hello. Firefox Hello lets you have free video and voice calls and 
     loop.rooms.enabled=false
 
 https://support.mozilla.org/en-US/kb/firefox-hello-video-and-voice-conversations-online
+
 https://support.mozilla.org/en-US/questions/1043588
 
 
@@ -1124,7 +1144,6 @@ Deny network predictor (seer). The network predictor (formerly called "seer") ma
 
     network.seer.enabled=false (maybe obsolete or absent)
     network.seer.max-db-size=0 (maybe obsolete or absent)
-
     network.predictor.enabled=false
     network.predictor.enable-hover-on-ssl=false
     network.predictor.max-db-size=0
@@ -1140,10 +1159,13 @@ https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connectio
 
 Deny Firefox Share. The Social API is an architecture that makes it easier for web browsers to integrate with social media services, using standard web technologies as the API. Once a social service provider is implemented for Firefox, it becomes possible for the browser to integrate web resources from a service, in-chrome user controls and information related to that service. For example:
 
-Integration of persistent social notifications into the Firefox toolbar.
-Integration of news feeds, tickers, buddy lists, etc., into a Firefox sidebar.
-Integration of chat, voice, video, etc. into docked or floating window.
-Integration of a share/recommend service in the Firefox toolbar.
+a) Integration of persistent social notifications into the Firefox toolbar.
+
+b) Integration of news feeds, tickers, buddy lists, etc., into a Firefox sidebar.
+
+c) Integration of chat, voice, video, etc. into docked or floating window.
+
+d) Integration of a share/recommend service in the Firefox toolbar.
 
 You must disable it:
 
@@ -1190,7 +1212,6 @@ Deny WI-FI leaks and Firefox debugging by WI-FI. Firefox gathers information abo
 
     network.tickle-wifi.enabled=false
     geo.wifi.uri=
-
     devtools.remote.wifi.scan=false
     devtools.remote.wifi.visible=false
 
@@ -1236,6 +1257,7 @@ e) check rights, it must be:
     -r--------
 
 https://en.wikipedia.org/wiki/HSTS
+
 https://en.wikipedia.org/wiki/Downgrade_attack
 
 
@@ -1301,6 +1323,6 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/smoothscroll
 
 ## IV. ATENTION! ANDROID/iOS
 
-Firefox for Android and Firefox for iOS: In order to understand the performance of certain Mozilla marketing campaigns, Firefox sends data, including a Google advertising ID, IP address, timestamp, country, language/locale, operating system, app version, to our third party vendor. This data allows us to attribute an install to a specific advertising channel and optimize marketing campaign strategies.
+**Firefox for Android and Firefox for iOS: In order to understand the performance of certain Mozilla marketing campaigns, Firefox sends data, including a Google advertising ID, IP address, timestamp, country, language/locale, operating system, app version, to our third party vendor. This data allows us to attribute an install to a specific advertising channel and optimize marketing campaign strategies.**
 
 https://www.mozilla.org/en-US/privacy/firefox/
