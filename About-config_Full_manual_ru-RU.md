@@ -25,7 +25,7 @@ WINDOWS:
 https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles
 
 
-## I. ДОСТУП К НАСТРОЙКАМ
+## II. ДОСТУП К НАСТРОЙКАМ
 
 После запуска браузера введите about:config в адресной строке и нажмите на Enter чтобы открыть список настроек:
 
@@ -67,18 +67,22 @@ http://kb.mozillazine.org/Allowing_only_certain_sites_to_use_JavaScript
     dom.storage.enabled=false
 
 http://kb.mozillazine.org/Dom.storage.enabled
+
 https://en.wikipedia.org/wiki/Document_Object_Model
 
 - DOM JavaScript
 
 Отключение JavaScript, исполняемого с помощью DOM. Когда веб-страница загружена, браузер создает ее "модель поведения" и может позволить гипотетическое исполнение нежелательного и потенциально опасного функционала. Для предотвращения следующих действий:
 
-JavaScript может добавлять, менять и удалять любые HTML-элементы и атрибуты страницы;
-JavaScript может менять все стили CSS на странице;
-JavaScript может реагировать на любые события на странице;
-JavaScript может создавать новые события на странице -
+а) JavaScript может добавлять, менять и удалять любые HTML-элементы и атрибуты страницы.
 
-необходимо активировать/деактивировать следующие функции:
+б) JavaScript может менять все стили CSS на странице.
+
+в) JavaScript может реагировать на любые события на странице.
+
+г) JavaScript может создавать новые события на странице
+
+-необходимо активировать/деактивировать следующие функции:
 
 Запрет скриптам скрывать окна:
 
@@ -292,6 +296,7 @@ https://support.mozilla.org/en-US/questions/1025367
     browser.popups.showPopupBlocker=true
 
 http://kb.mozillazine.org/Pop-ups_not_blocked
+
 https://support.mozilla.org/en-US/questions/675692
 
 Блокирование всплывающих окон, инициируемых сторонними плагинами Flash или Java: 
@@ -325,6 +330,7 @@ http://kb.mozillazine.org/Firefox_:_Tips_:_Animated_Images
     browser.chrome.favicons=false
 
 http://kb.mozillazine.org/Browser.chrome.site_icons
+
 http://kb.mozillazine.org/Browser.chrome.favicons
 
 
@@ -369,7 +375,9 @@ Pipelining - включение и определение количества �
     network.http.version=1.1 (не создавайте эту настройку, она присутствует по умолчанию)
 
 http://kb.mozillazine.org/Network.http.pipelining
+
 http://kb.mozillazine.org/Network.http.pipelining.ssl
+
 http://kb.mozillazine.org/Network.http.version
 
 Активация pipelining при использовании прокси-сервера:
@@ -378,6 +386,7 @@ http://kb.mozillazine.org/Network.http.version
     network.http.proxy.version=1.1  (не создавайте эту настройку, она присутствует по умолчанию)
 
 http://kb.mozillazine.org/Network.http.proxy.keep-alive
+
 http://kb.mozillazine.org/Network.http.proxy.version
 
 Для "удержания" (keep-alive) процесса pipelining проверьте следующую опцию:
@@ -456,7 +465,7 @@ https://en.wikipedia.org/wiki/Web_beacon
 
 Включение и выключение соединения с TOR через прокси-сервер (ручная настройка):
 
-    network.proxy.type=1 (ВКЛ, ручная настройка конфгурации - рекомендовано совместно с использованием TOR и Polipo)
+    network.proxy.type=1 (ВКЛ, ручная настройка конфгурации - рекомендовано совместно с TOR и Polipo)
 
 или:
 
@@ -489,6 +498,7 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Mozilla_networking_
     network.proxy.socks_port=9050
 
 http://kb.mozillazine.org/Network.proxy.socks_version
+
 http://kb.mozillazine.org/Network.proxy.socks_port
 
 Запрет использования прокси для некоторых локальных адресов. Множество сетей лимитируют доступ к публичным ресурсам через прокси-сервер. Эта опция сконфигурирована как "black-list", определяющий запреты на выход через прокси:
@@ -661,6 +671,7 @@ http://kb.mozillazine.org/Browser.sessionhistory.max_total_viewers
     browser.sessionstore.max_resumed_crashes=0
 
 http://kb.mozillazine.org/Browser.sessionstore.max_resumed_crashes
+
 https://wiki.mozilla.org/Firefox/session_restore
 
 Places (система хранения закладок, истории, другой пользовательской информации) - отмена хранения истории посещений и загрузок:
@@ -746,6 +757,7 @@ http://kb.mozillazine.org/Browser.cache.memory.enable
 Допустимые значения:
 
 0 - оперативная память не используется (не рекомендуется; см. примечание ниже);
+
 n (целое цифровое значение) - количество килобайт, выделенных на кэш.
 
 Примечание: Требует browser.cache.memory.enable=true
@@ -898,6 +910,7 @@ http://kb.mozillazine.org/About:config_entries
     browser.download.manager.scanWhenDone=false
 
 http://kb.mozillazine.org/Browser.download.manager.scanWhenDone
+
 https://support.mozilla.org/en-US/kb/cant-download-or-save-files
 
 Отключение добавления списка закачанных файлов в список "Последние документы":
@@ -905,6 +918,7 @@ https://support.mozilla.org/en-US/kb/cant-download-or-save-files
     browser.download.manager.addToRecentDocs=false
 
 https://developer.mozilla.org/en-US/docs/Download_Manager_preferences
+
 http://kb.mozillazine.org/Browser.download.manager.addToRecentDocs
 
 Запрет на открытие небезопасных типов файлов при их загрузке (*.jar, *.zip, etc.)
@@ -926,7 +940,9 @@ http://kb.mozillazine.org/Network.jar.open-unsafe-types
     privacy.donottrackheader.value=1
 
 http://kb.mozillazine.org/Privacy.donottrackheader.enabled
+
 http://kb.mozillazine.org/Privacy.donottrackheader.value
+
 https://support.mozilla.org/en-US/kb/how-do-i-turn-do-not-track-feature
 
 Отключение загрузки списка следящих сайтов и механизма trackingprotection. Firefox скачивает с сайта Mozilla список "следящих" сайтов и пытается блокировать их, если пользователь работает в режиме "Private Browsing". Это увеличивает расходуемый трафик и гипотетически может раскрыть ваши пользовательские предпочтения, в частности - список посещаемых сайтов. Этот механизм тоже следует отключить (учитывая общую бесполезность сервиса “Do Not Track”):
@@ -972,6 +988,7 @@ https://developer.mozilla.org/en-US/Firefox/Privacy/Tracking_Protection
     browser.safebrowsing.updateURL=
 
 http://kb.mozillazine.org/Browser.safebrowsing.enabled
+
 http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
 
 
@@ -1056,6 +1073,7 @@ https://support.mozilla.org/en-US/questions/1074600
     pageThumbs.enabled=false
 
 https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
+
 https://support.mozilla.org/en-US/questions/973320
 
 
@@ -1100,6 +1118,7 @@ http://kb.mozillazine.org/About:config
     loop.rooms.enabled=false
 
 https://support.mozilla.org/en-US/kb/firefox-hello-video-and-voice-conversations-online
+
 https://support.mozilla.org/en-US/questions/1043588
 
 
@@ -1206,10 +1225,13 @@ https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connectio
 
 Блокирование Firefox Share. Архитектура Social API позволяет интегрировать браузер с соцсетями. При этом доступен следующий функционал:
 
-интегрирование оповещений соцсетей на панели браузера; 
-интегрирование новостных лент, тикетов, списков друзей;
-интегрирование голосовых, текстовых и видеочатов в доки или всплывающие окна;
-интегрирование сервисов, связанных с распространением (рекомендацией, оценкой) веб-контента.
+а) интегрирование оповещений соцсетей на панели браузера.
+
+б) интегрирование новостных лент, тикетов, списков друзей.
+
+в) интегрирование голосовых, текстовых и видеочатов в доки или всплывающие окна.
+
+г) интегрирование сервисов, связанных с распространением (рекомендацией, оценкой) веб-контента.
 
 Для отключения установите:
 
@@ -1232,6 +1254,7 @@ https://wiki.mozilla.org/Firefox_Social_Integration
     media.getusermedia.screensharing.allowed_domains=
 
 https://wiki.mozilla.org/Media/getUserMedia
+
 https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 
 Отключение "Send Video To Device" (передача HTML5-видео в Roku, Chromecast и т.п.):
@@ -1260,7 +1283,6 @@ https://wiki.mozilla.org/Media/EME
 
     devtools.remote.wifi.scan=false
     devtools.remote.wifi.visible=false
-
 
 http://kb.mozillazine.org/Geo.wifi.uri
 
@@ -1304,6 +1326,7 @@ SiteSecurityServiceState.txt
     -r--------
 
 https://en.wikipedia.org/wiki/HSTS
+
 https://en.wikipedia.org/wiki/Downgrade_attack
 
 
@@ -1371,6 +1394,6 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/smoothscroll
 
 Специальное предупреждение Mozilla о сборе, передаче, анализе и хранении пользовательских данных в специальной версии Firefox для мобильных систем. Будьте внимательны и осторожны!
 
-"Firefox for Android and Firefox for iOS: In order to understand the performance of certain Mozilla marketing campaigns, Firefox sends data, including a Google advertising ID, IP address, timestamp, country, language/locale, operating system, app version, to our third party vendor. This data allows us to attribute an install to a specific advertising channel and optimize marketing campaign strategies".
+**Firefox for Android and Firefox for iOS: In order to understand the performance of certain Mozilla marketing campaigns, Firefox sends data, including a Google advertising ID, IP address, timestamp, country, language/locale, operating system, app version, to our third party vendor. This data allows us to attribute an install to a specific advertising channel and optimize marketing campaign strategies.**
 
 https://www.mozilla.org/en-US/privacy/firefox/
