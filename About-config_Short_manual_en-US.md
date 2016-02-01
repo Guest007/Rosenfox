@@ -10,8 +10,6 @@ LINUX:
 
 WINDOWS:
 
-Выполните команду:
-
     "C:\Program Files\Mozilla Firefox\firefox.exe" -p
 
 Or:
