@@ -56,7 +56,7 @@ You can create a JavaScript site "white-list". In user.js, add the following lin
 
 http://kb.mozillazine.org/Allowing_only_certain_sites_to_use_JavaScript
 
-Attention: Change "http://www.safe-site-1.com  https://safe-site-2.net" etc. to preferred links.
+**Attention:** Change "http://www.safe-site-1.com  https://safe-site-2.net" etc. to preferred links.
 
 
 - DOM (Document Object Model) storage
@@ -141,7 +141,7 @@ Only cookies from the originating server are allowed. Third-party cookies are di
 
     network.cookie.cookieBehavior=1 (not recommended)
 
-Attention: If you want to use original cookies, set correct lifetime policy. The cookie expires at the end of the session (when the browser closes):
+**Attention:** If you want to use original cookies, set correct lifetime policy. The cookie expires at the end of the session (when the browser closes):
 
     network.cookie.lifetimePolicy=2
 
@@ -175,7 +175,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Gecko_user_agent_string_refere
 
 You can find fake UA here: http://www.useragentstring.com/pages/useragentstring.php. Please, don't choose very original string but search some average values as described here.
 
-Attention: To prevent UA-leaks you must change UA-string with globally disabled JavaScript!
+**Attention:** To prevent UA-leaks you must change UA-string with globally disabled JavaScript!
 
 
 - LOCALE, LANGUAGES
@@ -202,7 +202,7 @@ Switch off spellchecker:
 
 http://kb.mozillazine.org/Layout.spellcheckDefault
 
-Attention: We recommend to install English version of Firefox or disable native (non-English) localization.
+**Attention:** We recommend to install English version of Firefox or disable native (non-English) localization.
 
 
 - REFERERS
@@ -265,7 +265,7 @@ http://kb.mozillazine.org/Privacy.popups.disable_from_plugins
 
 - IMAGES, FAVICONS
 
-Block all images from loading. The permissions extension allows for a more complete method of allowing, blocking, and restricting content displayed in the browser—including images:
+Block all images from loading. The permissions extension allows for a more complete method of allowing, blocking, and restricting content displayed in the browser-including images:
 
     permissions.default.image=2 (recommended)
 
@@ -663,7 +663,7 @@ http://kb.mozillazine.org/Browser.bookmarks.max_backups
 
 - CACHE
 
-Attention: If you have Firefox for Android or for iOS (RAM < 2 Gb), don't change any settings!
+**Attention:** If you have Firefox for Android or for iOS (RAM < 2 Gb), don't change any settings!
 
 Don't cache HTTP or HTTPS files:
 
@@ -702,7 +702,7 @@ Set cache to zero. Do not cache files on the hard drive:
 
 http://kb.mozillazine.org/Browser.cache.disk.capacity
 
-Attention: Switch "browser.cache.disk.smart_size.enabled" to false.
+**Attention:** Switch "browser.cache.disk.smart_size.enabled" to false.
 
 Allow decoded images, chrome, and secure pages to be cached in memory.
 
@@ -724,12 +724,12 @@ Atention: Switch "browser.cache.memory.enable" to true.
 
 http://kb.mozillazine.org/Browser.cache.memory.capacity
 
-Attention: If you want to disable cache in RAM and(!) on HDD, it's big mistake!
+**Attention:** If you want to disable cache in RAM and(!) on HDD, it's big mistake!
 
 
 - GEO-IP
 
-Geo disabling. Firefox has a feature that allows sites to request your location (e.g., to allow those sites to show your location on a map). If a site requests your location, Firefox seeks your permission before determining and sharing your location. In order to determine your location, Firefox may use several pieces of data to determine your location, including your operating systems geolocation features, Wi-Fi networks, cell phone towers, or IP address. Estimating your location involves sending some of this information to Google's geolocation service. Switch to:
+Deny Geo. Firefox has a feature that allows sites to request your location (e.g., to allow those sites to show your location on a map). If a site requests your location, Firefox seeks your permission before determining and sharing your location. In order to determine your location, Firefox may use several pieces of data to determine your location, including your operating systems geolocation features, Wi-Fi networks, cell phone towers, or IP address. Estimating your location involves sending some of this information to Google's geolocation service. Switch to:
 
     geo.enabled=false
     geo.wifi.uri=
@@ -742,13 +742,13 @@ https://www.mozilla.org/en-US/firefox/geolocation/
 
 Firefox sends Mozilla a request once to look up your location at a country level using your IP address. Then Mozilla send that country level information back to Firefox, where it's stored locally. Firefox will then choose which search engine to use as its default based on the locally stored country information.
 
-Disabling Search Suggestions. Search suggestions is a feature to find out common phrases that other people have searched for. These search suggestions are offered by your Default Search Engines (such as Google, Yahoo, etc.) and not by Firefox. If you enable this feature, and your Default Search Engine supports suggestions, Firefox may send the terms you type in the Awesome Bar or Search Bar to your Default Search Engine to retrieve suggestions, and is governed by the applicable Privacy Policy from your Default Search Engine. To disable search suggestions, switch to: 
+Deny Search Suggestions. Search suggestions is a feature to find out common phrases that other people have searched for. These search suggestions are offered by your Default Search Engines (such as Google, Yahoo, etc.) and not by Firefox. If you enable this feature, and your Default Search Engine supports suggestions, Firefox may send the terms you type in the Awesome Bar or Search Bar to your Default Search Engine to retrieve suggestions, and is governed by the applicable Privacy Policy from your Default Search Engine. To disable search suggestions, switch to: 
 
     browser.search.suggest.enabled=false
 
 http://kb.mozillazine.org/Browser.search.suggest.enabled
 
-Disabling GEO-search. In order to set the right default search engine for your location, Firefox will perform a geolocation lookup once by contacting Mozilla's servers and store the country-level result locally. In order to determine your location, Firefox may use several pieces of data to determine your location, including your operating systems geolocation features, Wi-Fi networks, cell phone towers, or IP address. To disable GEO-search, switch to: 
+Deny GEO-search. In order to set the right default search engine for your location, Firefox will perform a geolocation lookup once by contacting Mozilla's servers and store the country-level result locally. In order to determine your location, Firefox may use several pieces of data to determine your location, including your operating systems geolocation features, Wi-Fi networks, cell phone towers, or IP address. To disable GEO-search, switch to: 
 
     browser.search.geoSpecificDefaults=false
     browser.search.geoip.url=false (maybe obsolete)
@@ -827,9 +827,9 @@ Deny Addons Blocklist. Firefox contacts Mozilla to check for malicious addons. S
 
 http://kb.mozillazine.org/Extensions.blocklist.enabled
 
-Attention: You don't need any addons in the current Firefox's configuration! But if you really want to install some addons, you can find trusted versions here: https://www.gnu.org/software/gnuzilla/addons.html
+**Attention:** You don't need any addons in the current Firefox's configuration! But if you really want to install some addons, you can find trusted versions here: https://www.gnu.org/software/gnuzilla/addons.html
 
-Attention: Addon's can probably override current browser settings!
+**Attention:** Addon's can probably override current browser settings!
 
 
 - CLEAN
@@ -883,7 +883,7 @@ http://kb.mozillazine.org/Network.jar.open-unsafe-types
 
 - DNT, TRACKING PROTECTION
 
-Most major websites track their visitors' behavior and then sell or provide that information to other companies. This information can be used to show ads, products or services specifically targeted to you. Firefox has a Do Not Track feature that lets you tell every website you visit, their advertisers, and content providers that you don't want your browsing behavior tracked. Honoring this setting is voluntary - individual websites are not required to respect it. As a rule, owners of tracking sites has very aggressive policy and activity, that is why DNT is very useless function. To switch off:
+Most major websites track their visitors' behavior and then sell or provide that information to other companies. This information can be used to show ads, products or services specifically targeted to you. Firefox has a Do Not Track feature that lets you tell every website you visit, their advertisers, and content providers that you don't want your browsing behavior tracked. Honoring this setting is voluntary - individual websites are not required to respect it. As a rule, owners of tracking sites have very aggressive policy and activity, that is why DNT is very useless function. To switch off:
 
     privacy.donottrackheader.enabled=false
     privacy.donottrackheader.value=1
@@ -909,7 +909,7 @@ The propietary application Pocket (previously known as "Read It Later") allows t
 
     browser.pocket.enabled=false
 
-Attention: Unfortunately, this setting don't disable service but block Pocket's button only.
+**Attention:** Unfortunately, this setting don't disable service but block Pocket's button only.
 
 
 - GOOGLE
@@ -1241,11 +1241,14 @@ SiteSecurityServiceState.txt
 
 It's a real fingerprints of the browser!
 
-To prevent HSTS tracking:
+To prevent HSTS tracking.
 
 a) close Firefox;
-b) open SiteSecurityServiceState.txt and delete all strings;
-c) save and close file;
+
+b) open SiteSecurityServiceState.txt and delete all strings.
+
+c) save and close file.
+
 d) make this file read-only.
 
 For example (Linux only):
@@ -1314,7 +1317,7 @@ Block "enhanced page":
     browser.newtabpage.pinned=
     browser.startup.homepage=about:blank ("пустая страница"; рекомендуется)
 
-Disabling smooth scrolling for the corresponding arrowscrollbox. Switch to:
+Deny smooth scrolling for the corresponding arrowscrollbox. Switch to:
 
     general.smoothScroll=false
 
@@ -1322,6 +1325,8 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/smoothscroll
 
 
 ## IV. ATENTION! ANDROID/iOS
+
+**Be very carefull!**
 
 **Firefox for Android and Firefox for iOS: In order to understand the performance of certain Mozilla marketing campaigns, Firefox sends data, including a Google advertising ID, IP address, timestamp, country, language/locale, operating system, app version, to our third party vendor. This data allows us to attribute an install to a specific advertising channel and optimize marketing campaign strategies.**
 
