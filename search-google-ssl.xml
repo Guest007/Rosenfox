@@ -1,0 +1,12 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Google (SSL)</os:ShortName>
+<os:Description>Google (SSL)</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<SearchForm>https://www.google.com/</SearchForm>
+<os:Url type="text/html" method="GET" template="https://www.google.com/search">
+  <os:Param name="q" value="{searchTerms}"/>
+  <os:Param name="ie" value="utf-8"/>
+  <os:Param name="oe" value="utf-8"/>
+</os:Url><os:Url type="application/x-suggestions+json" method="GET" template="https://clients1.google.com/complete/search?&amp;q={searchTerms}">
+</os:Url>
+</SearchPlugin>
