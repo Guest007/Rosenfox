@@ -663,7 +663,7 @@ http://kb.mozillazine.org/Browser.bookmarks.max_backups
 
 - CACHE
 
-**Attention:** If you have Firefox for Android or for iOS (RAM < 2 Gb), don't change any settings!
+**Attention:** If you have Firefox for Android or for iOS (RAM less than 2 Gb), don't change any settings!
 
 Don't cache HTTP or HTTPS files:
 
@@ -1324,7 +1324,38 @@ Deny smooth scrolling for the corresponding arrowscrollbox. Switch to:
 https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/smoothscroll
 
 
-## IV. ATENTION! ANDROID/iOS
+## IV. SEARCH PLUGINS
+
+Search plugins, which included in Firefox by default, has at least four problems:
+
+a) as a rule (by default) - unencrypted (HTTP, not HTTPS) connection to search server. You have a potential risk to disclose own search preferences;
+
+b) the picture (favicon) in base64 that built-in in source code;
+
+c) plugin *may include* the special identificator. This may decrease your anonymity;
+
+d) search string may include additional settings and the search server may get several pieces of data to determine your operating systems, browser version, etc.
+
+To prevent this risks:
+
+a) delete ALL defaults search plugins from Firefox;
+
+b) close browser;
+
+c) create subfolder "searchplugins" in the current Firefox's profile;
+
+d) download next three files from our repository
+
+search-duckduckgo-ssl-html.xml search-google-ssl.xml search-yandex-ssl.xml
+
+and copy files to /searchplugins
+
+**Attention:** Please remember that Google и Yandex forever trace your search activity and deny search through TOR. Use DuckDuckGo instead.
+
+https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox
+
+
+## V. ATENTION! ANDROID/iOS
 
 **Be very carefull!**
 
