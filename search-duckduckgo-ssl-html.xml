@@ -4,6 +4,5 @@
 <os:InputEncoding>UTF-8</os:InputEncoding>
 <os:Url type="text/html" method="POST" template="https://duckduckgo.com/html/" resultDomain="duckduckgo.com">
   <os:Param name="q" value="{searchTerms}"/>
-</os:Url><os:Url type="application/x-suggestions+json" method="GET" template="https://ac.duckduckgo.com/ac/?q={searchTerms}&amp;type=list" resultDomain="ac.duckduckgo.com">
 </os:Url>
 </SearchPlugin>
