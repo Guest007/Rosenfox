@@ -3,6 +3,5 @@
 <os:Description>Yandex (SSL)</os:Description>
 <os:InputEncoding>UTF-8</os:InputEncoding>
 <os:Url type="text/html" method="GET" template="https://yandex.ru/yandsearch?text={searchTerms}">
-</os:Url><os:Url type="application/x-suggestions+json" method="GET" template="https://suggest.yandex.ru/suggest-ff.cgi?part={searchTerms}">
 </os:Url>
 </SearchPlugin>
