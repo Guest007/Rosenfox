@@ -748,7 +748,7 @@ Deny Search Suggestions. Search suggestions is a feature to find out common phra
 
 http://kb.mozillazine.org/Browser.search.suggest.enabled
 
-Deny GEO-search. In order to set the right default search engine for your location, Firefox will perform a geolocation lookup once by contacting Mozilla's servers and store the country-level result locally. In order to determine your location, Firefox may use several pieces of data to determine your location, including your operating systems geolocation features, Wi-Fi networks, cell phone towers, or IP address. To disable GEO-search, switch to: 
+Deny GEO-search. In order to set the right default search engine for your location, Firefox will perform a geolocation lookup once by contacting Mozilla's servers and store the country-level result locally. In order to determine your location, Firefox may use several pieces of data to determine your location, including your operating systems, geolocation features, Wi-Fi networks, cell phone towers, or IP address. To disable GEO-search, switch to: 
 
     browser.search.geoSpecificDefaults=false
     browser.search.geoip.url=false (maybe obsolete)
@@ -1326,15 +1326,17 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/smoothscroll
 
 ## IV. SEARCH PLUGINS
 
-Search plugins, which included in Firefox by default, has at least four problems:
+Search plugins, which included in Firefox by default, has at least five problems:
 
-a) as a rule (by default) - unencrypted (HTTP, not HTTPS) connection to search server. You have a potential risk to disclose own search preferences;
+a) as a rule (by default) - unencrypted (HTTP) connection to search server. You have a potential risk to disclose own search preferences;
 
 b) the picture (favicon) in base64 that built-in in source code;
 
 c) plugin *may include* the special identificator. This may decrease your anonymity;
 
-d) search string may include additional settings and the search server may get several pieces of data to determine your operating systems, browser version, etc.
+d) search string may include additional settings and the search server may get several pieces of data to determine your operating systems, browser version, etc.:
+
+e) autosuggestion of search results.
 
 To prevent this risks:
 
@@ -1344,13 +1346,19 @@ b) close browser;
 
 c) create subfolder "searchplugins" in the current Firefox's profile;
 
-d) download next three files from our repository
+d) download next files from our repository:
 
-search-duckduckgo-ssl-html.xml search-google-ssl.xml search-yandex-ssl.xml
+    search-duckduckgo-ssl-html.xml
+    search-google-ssl.xml
+    search-yandex-ssl.xml
+    search-wikipedia-en-ssl.xml
+    search-wikipedia-ru-ssl.xml
 
 and copy files to /searchplugins
 
 **Attention:** Please remember that Google и Yandex forever trace your search activity and deny search through TOR. Use DuckDuckGo instead.
+
+http://www.opensearch.org/
 
 https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox
 
