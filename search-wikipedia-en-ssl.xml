@@ -1,0 +1,8 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Wikipedia (en) SSL</os:ShortName>
+<os:Description>Wikipedia (en) SSL</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<SearchForm>https://en.wikipedia.org/wiki/</SearchForm>
+<os:Url type="text/html" method="GET" template="https://en.wikipedia.org/wiki/Special:Search?go=Go&amp;search={searchTerms}">
+</os:Url>
+</SearchPlugin>
