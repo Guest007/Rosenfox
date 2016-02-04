@@ -7,6 +7,5 @@
   <os:Param name="q" value="{searchTerms}"/>
   <os:Param name="ie" value="utf-8"/>
   <os:Param name="oe" value="utf-8"/>
-</os:Url><os:Url type="application/x-suggestions+json" method="GET" template="https://clients1.google.com/complete/search?&amp;q={searchTerms}">
 </os:Url>
 </SearchPlugin>
