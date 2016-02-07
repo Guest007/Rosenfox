@@ -1,0 +1,8 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>YouTube (SSL)</os:ShortName>
+<os:Description>YouTube (SSL)</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<SearchForm>https://www.youtube.com/</SearchForm>
+<os:Url type="text/html" method="GET" template="https://www.youtube.com/results?search_query={searchTerms}">
+</os:Url>
+</SearchPlugin>
