@@ -20,7 +20,7 @@ WINDOWS:
 
 В открывшемся менеджере профилей нажмите на "Create Profile...", чтобы запустить мастер его создания. Нажмите на "Next" и выберите имя для нового профиля. Затем нажмите на "Finish".
 
-Если менеджер профилей не запускается, скорее всего, Firefox запущен в фоновом режиме (или не закрыт). Закройте все версии Firefox или перезапустите компьютер.
+Если менеджер профилей не появляется, скорее всего, Firefox запущен в фоновом режиме (или не закрыт). Закройте все версии Firefox или перезапустите компьютер.
 
 https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles
 
@@ -225,7 +225,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Gecko_user_agent_string_refere
 
 Маскировка локали браузера - с национальной (ru) под английскую:
 
-    general.useragent.locale=en
+    general.useragent.locale=en-US
 
 http://kb.mozillazine.org/General.useragent.locale
 
@@ -235,9 +235,9 @@ http://kb.mozillazine.org/General.useragent.locale
 
 http://kb.mozillazine.org/Intl.locale.matchOS
 
-Сброс (маскировка) предпочитаемых языков до en-us/en:
+Сброс (маскировка) предпочитаемых языков до en-US/en:
 
-    intl.accept_languages=en-us,en
+    intl.accept_languages=en-US, en
 
 Отключение автопроверки орфографии:
 
@@ -245,7 +245,9 @@ http://kb.mozillazine.org/Intl.locale.matchOS
 
 http://kb.mozillazine.org/Layout.spellcheckDefault
 
-**Внимание:** Рекомендуется ставить нелокализованную (английскую, en-us) версию Firefox или отключить/удалить дополнение с локализацией!
+**Внимание:** Настоятельно рекомендуется ставить нелокализованную (английскую, en-US) версию Firefox!
+
+**Внимание:** Для предотвращения утечек информации о локализациях дополнительно запретите JavaScript глобально!
 
 
 - REFERERS
@@ -409,7 +411,7 @@ http://kb.mozillazine.org/Network.dns.disablePrefetch
 
 Запрет предварительного запроса DNS для всех ссылок на активной HTTPS-защищенной странице:
 
-network.dns.disablePrefetchFromHTTPS=true (настройка может отсутствовать или устареть)
+    network.dns.disablePrefetchFromHTTPS=true (настройка может отсутствовать или устареть)
 
 Запрет предварительной загрузки страницы, которую Firefox считает логически последующей:
 
@@ -1404,7 +1406,7 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/smoothscroll
 
 а) соединение с поисковым сервером, как правило, осуществляется по незащищенному (HTTP, а не HTTPS) соединению, и передаваемый поисковый запрос может быть легко перехвачен третьей стороной;
 
-б) исходный код плагина содержит изображение, кодированное в base64, что может гипотетически привести к нарушению приватности;
+б) исходный код плагина содержит изображение, кодированное в base64;
 
 в) исходный код плагина *может содержать* встроенный идентификатор, что приведет к отслеживанию пользователя и понижению уровня его анонимности;
 
@@ -1429,6 +1431,8 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/smoothscroll
     search-yandex-ssl.xml
     search-wikipedia-en-ssl.xml
     search-wikipedia-ru-ssl.xml
+    search-twitter-ssl.xml
+    search-youtube-ssl.xml
 
 д) скопируйте эти файлы в каталог searchplugins.
 
@@ -1436,12 +1440,11 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/smoothscroll
 
 1) отслеживают поисковую активность пользователей и профилируют их; 
 
-2) запрещают обращение к ним через TOR! 
+2) запрещают (в текущей конфигурации) обращение к ним через TOR! 
 
 Мы рекомендуем использовать поисковый сервер DuckDuckGo.
 
 http://www.opensearch.org/
-
 https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox
 
 
