@@ -1,6 +1,7 @@
 // This is ABC-sorted lists of preferences
 //
-// ATTENTION! Don't copy this file to new Firefox profile! Please insert preferred strings in about:config manually, one-by-one!
+// ATTENTION! Don't copy this file to new Firefox profile! 
+// Please insert preferred strings in about:config manually, one-by-one!
 //
 // user_pref("browser.search.countryCode", "US"); // needs to additional check
 // user_pref("browser.search.geoip.url", false); // needs to additional check
@@ -186,7 +187,7 @@ user_pref("identity.fxaccounts.remote.signin.uri", "");
 user_pref("identity.fxaccounts.remote.signup.uri", "");
 user_pref("identity.fxaccounts.settings.uri", "");
 user_pref("image.animation_mode", "none");
-user_pref("intl.accept_languages", "en-us,en");
+user_pref("intl.accept_languages", "en-US, en");
 user_pref("intl.locale.matchOS", false);
 user_pref("javascript.enabled", false);
 user_pref("layers.acceleration.disabled", true);
