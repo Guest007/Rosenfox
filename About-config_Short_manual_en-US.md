@@ -182,7 +182,7 @@ You can find fake UA here: http://www.useragentstring.com/pages/useragentstring.
 
 Switch browser's local from national to English:
 
-    general.useragent.locale=en
+    general.useragent.locale=en-US
 
 http://kb.mozillazine.org/General.useragent.locale
 
@@ -192,9 +192,9 @@ Ignore the OS’s locale and use the value from general.useragent.locale:
 
 http://kb.mozillazine.org/Intl.locale.matchOS
 
-Reset list of preferred languages to en-us/en:
+Reset list of preferred languages to en-US/en:
 
-    intl.accept_languages=en-us,en
+    intl.accept_languages=en-US, en
 
 Switch off spellchecker: 
 
@@ -202,7 +202,9 @@ Switch off spellchecker:
 
 http://kb.mozillazine.org/Layout.spellcheckDefault
 
-**Attention:** We recommend to install English version of Firefox or disable native (non-English) localization.
+**Attention:** We strongly recommend to install English version of Firefox!
+
+**Attention:** To prevent locale-leaks you must deny JavaScript globally!
 
 
 - REFERERS
@@ -1353,10 +1355,12 @@ d) download next files from our repository:
     search-yandex-ssl.xml
     search-wikipedia-en-ssl.xml
     search-wikipedia-ru-ssl.xml
+    search-twitter-ssl.xml
+    search-youtube-ssl.xml
 
 and copy files to /searchplugins
 
-**Attention:** Please remember that Google и Yandex forever trace your search activity and deny search through TOR. Use DuckDuckGo instead.
+**Attention:** Please remember that Google и Yandex forever trace your search activity and deny (in current configuration) search through TOR. Use DuckDuckGo instead.
 
 http://www.opensearch.org/
 
