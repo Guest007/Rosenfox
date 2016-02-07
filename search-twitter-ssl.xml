@@ -1,8 +1,0 @@
-<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
-<os:ShortName>Twitter (SSL)</os:ShortName>
-<os:Description>Twitter (SSL)</os:Description>
-<os:InputEncoding>UTF-8</os:InputEncoding>
-<SearchForm>https://search.twitter.com/</SearchForm>
-<os:Url type="text/html" method="GET" template="https://search.twitter.com/search?q={searchTerms}">
-</os:Url>
-</SearchPlugin>
