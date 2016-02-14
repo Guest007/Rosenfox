@@ -325,7 +325,7 @@ Block form's synchronization through Firefox Sync:
     services.sync.prefs.sync.browser.formfill.enable=false
 
 
-- NETWORK: PIPELINING, DNS, PREFETCH, PING, PORTS, SSl
+- NETWORK: PIPELINING, DNS, PREFETCH, PING, SSl
 
 Enable or disable pipelining. In HTTP multiple requests can be sent before any responses are received. This is known as pipelining. Pipelining reduces network load and can reduce page loading times over high-latency connections, but not all servers support it.
 
@@ -378,7 +378,7 @@ Block link prefetching. Link prefetching is when a web page hints to the browser
 
 http://kb.mozillazine.org/Network.prefetch-next
 
-Allow remote DNS (TOR, proxy). This preference controls whether DNS lookups for SOCKS v5 clients happen on the client or on the proxy server. To bypass your provider's DNS-server, switch to: 
+Allow remote DNS. This preference controls whether DNS lookups for SOCKS v5 clients happen on the client or on the proxy server. To bypass your default DNS-server, switch to: 
 
     network.proxy.socks_remote_dns=true
 
@@ -416,13 +416,13 @@ Block non-safe algorithms (SSL3):
     security.ssl3.rsa_des_ede3_sha=false
 
 
-- TOR, PROXY
+- PORTS
 
-**Attention: Do not change this settings if you don't understand what you are doing!**
+**Attention: DO NOT change settings in this part if you don't understand what you are doing!**
 
-To retrieve data, Mozilla can be configured to route its requests through another server:  
+To retrieve data, Mozilla can be configured to route its requests through another local server, e.g. Polipo and another software:
 
-    network.proxy.type=1 (ON, manual proxy configuration - recommended with TOR & Polipo)
+    network.proxy.type=1 (ON, manual proxy configuration - for example: Polipo)
 
 or:
 
@@ -430,7 +430,7 @@ or:
 
 http://kb.mozillazine.org/Network.proxy.type
 
-If proxy ON (for example - Polipo proxy), you must set HTTP, SSL, FTP protocols to:
+If proxy ON (for example: Polipo), you must set HTTP, SSL, FTP protocols to:
 
 HTTP:
 
@@ -449,7 +449,7 @@ FTP:
 
 https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Mozilla_networking_preferences
 
-Allow remote DNS (TOR, proxy). This preference controls whether DNS lookups for SOCKS v5 clients happen on the client or on the proxy server; bypass your provider's DNS-server:
+Remote DNS. This preference controls whether DNS lookups for SOCKS v5 clients happen on the client or on the server:
 
     network.proxy.socks_remote_dns=true
 
@@ -471,7 +471,7 @@ No proxy for localhost. Many networks had limited access to the public network v
 
 http://kb.mozillazine.org/Network.proxy.no_proxies_on
 
-Banned ports. Some port numbers are reserved for functions such as e-mail or FTP. To prevent potential security risks if a protocol was allowed access a port reserved for a separate protocol, Firefox contain a list of banned ports  (TOR - 9050, 9051, 9150, 9151; I2P - 4444, Polipo - 8118):
+Banned ports. Some port numbers are reserved for functions such as e-mail or FTP. To prevent potential security risks if a protocol was allowed access a port reserved for a separate protocol, Firefox contain a list of banned ports  (for example: I2P - 4444, Polipo - 8118, etc.):
 
     network.security.ports.banned=9050,9051,9150,9151,8118,4444
 
@@ -1360,7 +1360,7 @@ d) download next files from our repository:
 
 and copy files to /searchplugins
 
-**Attention:** Please remember that Google и Yandex forever trace your search activity and deny (in current configuration) search through TOR. Use DuckDuckGo instead.
+**Attention:** Please remember that Google and Yandex forever trace your search activity. Use DuckDuckGo instead.
 
 http://www.opensearch.org/
 
