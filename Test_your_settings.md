@@ -1,8 +1,5 @@
 ## Test your settings!
 
-TorCheck - http://torcheck.xenobite.eu/
-
-Are you using TOR? - https://check.torproject.org/
 
 BrowserSpy - http://browserspy.dk/
 
