@@ -124,6 +124,7 @@ We strongly recommend to disable other DOM's functions:
     dom.telephony.enabled=false
     dom.voicemail.enabled=false
     dom.wakelock.enabled=false
+    dom.webcomponents.enabled=false
     dom.webnotifications.enabled=false
 
 
@@ -201,6 +202,22 @@ Switch off spellchecker:
     layout.spellcheckDefault=0
 
 http://kb.mozillazine.org/Layout.spellcheckDefault
+
+Specifying the heuristic detection mode. Determines which locale URI sets how character set are detected in the browser. Stay this field empty. The setting must be left blank for all locales other than Russian (=ruprobe), Ukrainian and Japanese. Do not under any circumstances specify the "universal" detector.
+
+intl.charset.detector=
+
+Do not change in Firefox Mobile:
+
+intl.charset.detector=chrome://global.locale/intl.properties  (Android)
+
+Different languages: 
+
+http://www-archive.mozilla.org/projects/intl/chardet.html
+
+Additional information:
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/Localizations_and_character_encodings
 
 **Attention:** We strongly recommend to install English version of Firefox!
 
@@ -471,7 +488,7 @@ No proxy for localhost. Many networks had limited access to the public network v
 
 http://kb.mozillazine.org/Network.proxy.no_proxies_on
 
-Banned ports. Some port numbers are reserved for functions such as e-mail or FTP. To prevent potential security risks if a protocol was allowed access a port reserved for a separate protocol, Firefox contain a list of banned ports  (for example: I2P - 4444, Polipo - 8118, etc.):
+Banned ports. Some port numbers are reserved for functions such as e-mail or FTP. To prevent potential security risks if a protocol was allowed access a port reserved for a separate protocol, Firefox contain a list of banned ports, for example:
 
     network.security.ports.banned=9050,9051,9150,9151,8118,4444
 
@@ -532,11 +549,18 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
 
 - PLUGINS (FLASH, JAVA)
 
-Deny plugins. A plugin is a piece of software that displays internet content that Firefox is not designed to display. This usually includes video, audio, online games and presentations that are made in patented (proprietary, non-free) formats: Adobe Flash, Apple QuickTime, Microsoft Silverlight; special software for download (uTorrent, Free Download manager). 
+Deny plugins. A plugin is a piece of software that displays internet content that Firefox is not designed to display. This usually includes video, audio, online games and presentations that are made in patented (proprietary, non-free) formats: Adobe Flash, Apple QuickTime, Microsoft Silverlight; special software for download. 
 
 Plugin's policy. To deny all, set:
 
     plugin.default.state=0
+    plugins.update.url=
+    pfs.datasource.url=
+
+Firefox mobile:
+
+media.plugins.enabled=false  (Android)
+plugin.disable=true  (Android)
 
 https://support.mozilla.org/en-US/questions/1002509
 
@@ -974,6 +998,7 @@ https://wiki.mozilla.org/Services/Sync/Addon_Sync
 Block Firefox Marketplace (marketplace for web apps):
 
     browser.apps.URL=
+    dom.mozApps.signed_apps_installable_from=
 
 https://support.mozilla.org/en-US/questions/1064312
 
@@ -1024,7 +1049,12 @@ https://support.mozilla.org/en-US/questions/973320
 Deny snippets. Firefox's default home page (about:home) loads small bits of information right below the search bar that we think will be useful to you. We call these "snippets". About once per day, Firefox connects to Mozilla and provides you with new snippets, if available. Mozilla may collect how often snippets are clicked, snippet name, browser locale, and which version of Firefox you're using. We only retain this information after 60 days in aggregate form. To help display relevant snippets, Firefox sends Mozilla a monthly request to look up your location at a country level using your IP address. Then Mozilla send that country level information back to Firefox, where it's stored locally. Firefox will then choose snippets to show you based on the locally stored country information. Some Mozilla sponsored snippets are interactive and allow you to optionally share your phone number or email address. It's very dangerous and must be disabled:
 
     browser.aboutHomeSnippets.updateUrl=
-    browser.snippets.countryCode=US (Android only)
+    browser.snippets.countryCode=US (Android)
+    browser.snippets.enabled=false  (Android)
+    browser.snippets.syncPromo.enabled=false  (Android)
+    browser.snippets.geoUrl=  (Android)
+    browser.snippets.statsUrl=  (Android)
+    browser.snippets.updateUrl=  (Android)
 
 https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service
 
@@ -1058,6 +1088,7 @@ Block Firefox Hello. Firefox Hello lets you have free video and voice calls and 
     loop.soft_start_hostname=
     loop.support_url=
     loop.rooms.enabled=false
+    loop.CSP=
 
 https://support.mozilla.org/en-US/kb/firefox-hello-video-and-voice-conversations-online
 
@@ -1298,6 +1329,7 @@ Block camera. This feature is not on a current W3C standards track, but it is su
     media.navigator.video.enabled=false
     camera.control.autofocus_moving_callback.enabled=false
     camera.control.face_detection.enabled=false
+    device.camera.enabled=false  (Android)
 
 https://wiki.mozilla.org/Media/getUserMedia
 
@@ -1318,6 +1350,7 @@ Block "enhanced page":
     browser.newtabpage.enhanced=false
     browser.newtabpage.pinned=
     browser.startup.homepage=about:blank ("пустая страница"; рекомендуется)
+    startup.homepage_welcome_url=
 
 Deny smooth scrolling for the corresponding arrowscrollbox. Switch to:
 
