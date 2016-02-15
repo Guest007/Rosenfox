@@ -11,8 +11,6 @@ Whoer - http://whoer.net/extended
 
 HTTP Header Viewer - http://www.ericgiguere.com/tools/http-header-viewer.html
 
-IP check - http://ip-check.info/?lang=en
-
 Rex Swain's HTTP Viewer - http://www.rexswain.com/httpview.html
 
 Tools on net - http://tools-on.net/privacy.shtml
