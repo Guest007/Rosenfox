@@ -163,6 +163,7 @@ https://en.wikipedia.org/wiki/Document_Object_Model
     dom.telephony.enabled=false
     dom.voicemail.enabled=false
     dom.wakelock.enabled=false
+    dom.webcomponents.enabled=false
     dom.webnotifications.enabled=false
 
 
@@ -244,6 +245,22 @@ http://kb.mozillazine.org/Intl.locale.matchOS
     layout.spellcheckDefault=0
 
 http://kb.mozillazine.org/Layout.spellcheckDefault
+
+Отключение "интеллектуальной" попытки определения необходимого набора локализованных символов. В десктопной версии Firefox рекомендуется оставить поле пустым! Никогда не ставьте там значение "Universial"! 
+
+intl.charset.detector=
+
+В мобильной версии Firefox изменение данной настройки не изучалось:
+
+intl.charset.detector=chrome://global.locale/intl.properties  (Android)
+
+Значения для различных языков: 
+
+http://www-archive.mozilla.org/projects/intl/chardet.html
+
+Уточнения и предупреждения:
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/Localizations_and_character_encodings
 
 **Внимание:** Настоятельно рекомендуется ставить нелокализованную (английскую, en-US) версию Firefox!
 
@@ -514,7 +531,7 @@ http://kb.mozillazine.org/Network.proxy.socks_port
 
 http://kb.mozillazine.org/Network.proxy.no_proxies_on
 
-Запрет на установку соединений по определенным портам. Многие порты зарезервированы за разными службами, обслуживающими, к примеру, FTP, POP и т.п. Для предотвращения потенциального риска необходимо запретить обращения к ним (например: I2P - порт 4444, Polipo - 8118):
+Запрет на установку соединений по определенным портам. Многие порты зарезервированы за разными службами, обслуживающими, к примеру, FTP, POP и т.п. Для предотвращения потенциального риска необходимо запретить обращения к ним, например:
 
     network.security.ports.banned=9050,9051,9150,9151,8118,4444
 
@@ -574,13 +591,20 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
 
 - PLUGINS (FLASH, JAVA)
 
-Настройка (блокирование) подключенных плагинов. Плагин - стороннее программное обеспечение, которое позволяет браузеру обрабатывать веб-контент, который он не может воспроизвести самостоятельно. Обычно это проприетарные (несвободные) патентованные форматы для обработки аудио- и видео-содержимого (Adobe Flash, Apple QuickTime, Microsoft Silverlight), а также онлайн-игры, презентации, средства для перехвата закачек и передачи их в специальные программы-даунлоадеры - uTorrent, Free Download manager и т.п.
+Настройка (блокирование) подключенных плагинов. Плагин - стороннее программное обеспечение, которое позволяет браузеру обрабатывать веб-контент, который он не может воспроизвести самостоятельно. Обычно это проприетарные (несвободные) патентованные форматы для обработки аудио- и видео-содержимого (Adobe Flash, Apple QuickTime, Microsoft Silverlight), а также онлайн-игры, презентации, средства для перехвата закачек и передачи их в специальные программы-даунлоадеры и т.п.
 
 Рекомендовано полное глобальное отключение:
 
     plugin.default.state=0
+    plugins.update.url=
+    pfs.datasource.url=
 
 https://support.mozilla.org/en-US/questions/1002509
+
+В мобильной версии браузера:
+
+media.plugins.enabled=false  (Android)
+plugin.disable=true  (Android)
 
 Отключение отдельных плагинов:
 
@@ -1039,6 +1063,7 @@ https://wiki.mozilla.org/Services/Sync/Addon_Sync
 Блокирование Firefox Discover Apps (Firefox Marketplace):
 
     browser.apps.URL=
+    dom.mozApps.signed_apps_installable_from=
 
 https://support.mozilla.org/en-US/questions/1064312
 
@@ -1089,7 +1114,12 @@ https://support.mozilla.org/en-US/questions/973320
 Отключение отсылки статистической информации, связанной с технологией Snippets (англ.: "обрывок", "фрагмент", "ничтожество"). Домашняя страница Firefox, установленная по умолчанию (about:home), содержит встроенный механизм показа некоторой информации и одновременного слежения за пользовательскими предпочтениями. Раз в день Firefox соединяется с сервером Mozilla и затем предлагает новый "обрывок". Mozilla отслеживает количество нажатий на snippets, их имена, локаль браузера и его версию. Эта информация хранится на сервере Mozilla 60 дней. Для показа наиболее подходящих "обрывков", Firefox ежемесячно посылает на сервер Mozilla запрос о вашем местонахождении и IP-адресе. Некоторые "обрывки" интерактивны и могут распространять ваш почтовый адрес и телефонный номер, что особенно опасно. Это серьезный источник утечек и слежения за пользователем; его следует отключить: 
 
     browser.aboutHomeSnippets.updateUrl=
-    browser.snippets.countryCode=US (в версии для Android)
+    browser.snippets.countryCode=US (Android)
+    browser.snippets.enabled=false  (Android)
+    browser.snippets.syncPromo.enabled=false  (Android)
+    browser.snippets.geoUrl=  (Android)
+    browser.snippets.statsUrl=  (Android)
+    browser.snippets.updateUrl=  (Android)
 
 https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service
 
@@ -1123,6 +1153,7 @@ http://kb.mozillazine.org/About:config
     loop.soft_start_hostname=
     loop.support_url=
     loop.rooms.enabled=false
+    loop.CSP=
 
 https://support.mozilla.org/en-US/kb/firefox-hello-video-and-voice-conversations-online
 
@@ -1372,6 +1403,7 @@ https://wiki.mozilla.org/B2G/QA/WebAPI_Test_Plan/Vibration
     media.navigator.video.enabled=false
     camera.control.autofocus_moving_callback.enabled=false
     camera.control.face_detection.enabled=false
+    device.camera.enabled=false  (Android)
 
 https://wiki.mozilla.org/Media/getUserMedia
 
@@ -1392,6 +1424,7 @@ https://wiki.mozilla.org/Media/getUserMedia
     browser.newtabpage.enhanced=false
     browser.newtabpage.pinned=
     browser.startup.homepage=about:blank ("пустая страница"; рекомендуется)
+    startup.homepage_welcome_url=
 
 Отмена плавной прокрутки (рекомендовано при торможениях, аппаратных сбоях и проблемах с видеокартой):
 
