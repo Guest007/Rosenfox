@@ -248,11 +248,11 @@ http://kb.mozillazine.org/Layout.spellcheckDefault
 
 Отключение "интеллектуальной" попытки определения необходимого набора локализованных символов. В десктопной версии Firefox рекомендуется оставить поле пустым! Никогда не ставьте там значение "Universial"! 
 
-intl.charset.detector=
+    intl.charset.detector=
 
 В мобильной версии Firefox изменение данной настройки не изучалось:
 
-intl.charset.detector=chrome://global.locale/intl.properties  (Android)
+    intl.charset.detector=chrome://global.locale/intl.properties  (Android)
 
 Значения для различных языков: 
 
@@ -603,8 +603,8 @@ https://support.mozilla.org/en-US/questions/1002509
 
 В мобильной версии браузера:
 
-media.plugins.enabled=false  (Android)
-plugin.disable=true  (Android)
+    media.plugins.enabled=false  (Android)
+    plugin.disable=true  (Android)
 
 Отключение отдельных плагинов:
 
@@ -1464,7 +1464,6 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/smoothscroll
     search-yandex-ssl.xml
     search-wikipedia-en-ssl.xml
     search-wikipedia-ru-ssl.xml
-    search-twitter-ssl.xml
     search-youtube-ssl.xml
 
 д) скопируйте эти файлы в каталог searchplugins.
