@@ -205,11 +205,11 @@ http://kb.mozillazine.org/Layout.spellcheckDefault
 
 Specifying the heuristic detection mode. Determines which locale URI sets how character set are detected in the browser. Stay this field empty. The setting must be left blank for all locales other than Russian (=ruprobe), Ukrainian and Japanese. Do not under any circumstances specify the "universal" detector.
 
-intl.charset.detector=
+    intl.charset.detector=
 
 Do not change in Firefox Mobile:
 
-intl.charset.detector=chrome://global.locale/intl.properties  (Android)
+    intl.charset.detector=chrome://global.locale/intl.properties  (Android)
 
 Different languages: 
 
@@ -559,8 +559,8 @@ Plugin's policy. To deny all, set:
 
 Firefox mobile:
 
-media.plugins.enabled=false  (Android)
-plugin.disable=true  (Android)
+    media.plugins.enabled=false  (Android)
+    plugin.disable=true  (Android)
 
 https://support.mozilla.org/en-US/questions/1002509
 
@@ -1388,7 +1388,6 @@ d) download next files from our repository:
     search-yandex-ssl.xml
     search-wikipedia-en-ssl.xml
     search-wikipedia-ru-ssl.xml
-    search-twitter-ssl.xml
     search-youtube-ssl.xml
 
 and copy files to /searchplugins
