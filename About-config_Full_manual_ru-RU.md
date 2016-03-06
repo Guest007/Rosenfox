@@ -290,21 +290,26 @@ http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer
 
 - REDIRECTIONS
 
-Блокирование автоматических перенаправлений на другую страницу и предупреждение пользователя о таких попытках (с выбором решения); определение лимита перенаправлений:
- 
-    network.http.prompt-temp-redirect=true
+Веб-серверы могут отсылать т.н. "редиректы" (перенаправления) - инструкции, заставляющие браузер получать контент с другой страницы (перенаправляющие его на другой ресурс).
+
+Определение лимита автоматических перенаправлений для получения содержимого другой страницы:
+
     network.http.redirection-limit=1
 
-https://support.mozilla.org/en-US/questions/1025367
+Предупреждение пользователя о достижении лимита таких попыток:
+
+    network.http.prompt-temp-redirect=true
+
+http://kb.mozillazine.org/Network.http.redirection-limit
 
 
 - AUTOREFRESH
 
-Запрет автообновления страницы:
+Запрет автообновления страницы и автоперенаправления на другую страницу:
 
     accessibility.blockautorefresh=true
 
-https://support.mozilla.org/en-US/questions/1025367
+http://kb.mozillazine.org/Accessibility.blockautorefresh
 
 
 - POPUPS
