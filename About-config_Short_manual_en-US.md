@@ -247,21 +247,26 @@ http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer
 
 - REDIRECTIONS
 
-Block redirections to another page without user's decision and set the limit of redirections:
-     
-    network.http.prompt-temp-redirect=true
+Servers can send redirects - an instruction that the browser should try to get the content from another URL. Because one URL could redirect to another and the other could redirect to the first, causing an infinite loop, a limit is placed on how many redirects can occur on one request.
+
+Set the limit of redirections to another page without user's decision:
+
     network.http.redirection-limit=1
 
-https://support.mozilla.org/en-US/questions/1025367
+Notify about the end of limit:
+
+    network.http.prompt-temp-redirect=true
+
+http://kb.mozillazine.org/Network.http.redirection-limit
 
 
 - AUTOREFRESH
 
-Prevent autorefresh of webpage:
+Prevent autorefresh of webpage or redirects to another page:
 
     accessibility.blockautorefresh=true
 
-https://support.mozilla.org/en-US/questions/1025367
+http://kb.mozillazine.org/Accessibility.blockautorefresh
 
 
 - POPUPS
