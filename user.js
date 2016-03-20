@@ -189,7 +189,7 @@ user_pref("extensions.update.autoUpdateDefault", false);
 user_pref("extensions.update.enabled", false);
 user_pref("extensions.update.url", "");
 user_pref("extensions.webservice.discoverURL", "");
-user_pref("general.smoothScroll", false
+user_pref("general.smoothScroll", false);
 user_pref("general.useragent.locale", "en-US");
 user_pref("general.useragent.override", "");
 user_pref("geo.enabled", false);
