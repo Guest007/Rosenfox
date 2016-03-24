@@ -45,19 +45,6 @@ JavaScript in content can not execute:
 
 http://kb.mozillazine.org/Javascript.enabled
 
-JavaScript's additional settings (white-list):
-
-You can create a JavaScript site "white-list". In user.js, add the following lines:
-
-    user_pref("capability.policy.policynames", "jsok");
-    user_pref("capability.policy.default.javascript.enabled", "noAccess");
-    user_pref("capability.policy.jsok.sites", "http://www.safe-site-1.com  https://safe-site-2.net");
-    user_pref("capability.policy.jsok.javascript.enabled", "allAccess");
-
-http://kb.mozillazine.org/Allowing_only_certain_sites_to_use_JavaScript
-
-**Attention:** Change "http://www.safe-site-1.com  https://safe-site-2.net" etc. to preferred links.
-
 
 - DOM (Document Object Model) storage
 
@@ -400,7 +387,7 @@ Block link prefetching. Link prefetching is when a web page hints to the browser
 
 http://kb.mozillazine.org/Network.prefetch-next
 
-Allow remote DNS. This preference controls whether DNS lookups for SOCKS v5 clients happen on the client or on the proxy server. To bypass your default DNS-server, switch to: 
+Allow remote DNS. This preference controls whether DNS lookups for SOCKS v5 clients happen on the client or on the proxy server. To bypass your default DNS-server (if proxy or another remote server is ON), switch to: 
 
     network.proxy.socks_remote_dns=true
 
@@ -409,6 +396,8 @@ http://kb.mozillazine.org/Network.proxy.socks_remote_dns
 Block DNS-resolving over IPv6:
 
     network.dns.disableIPv6=true
+
+http://kb.mozillazine.org/Network.dns.disableIPv6
 
 Ignore the ping attribute. HTML5 defines a new attribute for <a> elements: ping. This attribute contains one or more URIs to "ping" (send a POST request to) when the user clicks the link. The attribute would be useful for letting websites track visitors’ clicks:
 
@@ -442,7 +431,7 @@ Block non-safe algorithms (SSL3):
 
 **Attention: DO NOT change settings in this part if you don't understand what you are doing!**
 
-To retrieve data, Mozilla can be configured to route its requests through another local server, e.g. Polipo and another software:
+To retrieve data, Mozilla can be configured to route its requests through another server, e.g. Polipo (local proxy) and another software:
 
     network.proxy.type=1 (ON, manual proxy configuration - for example: Polipo)
 
@@ -495,25 +484,49 @@ http://kb.mozillazine.org/Network.proxy.no_proxies_on
 
 Banned ports. Some port numbers are reserved for functions such as e-mail or FTP. To prevent potential security risks if a protocol was allowed access a port reserved for a separate protocol, Firefox contain a list of banned ports, for example:
 
-    network.security.ports.banned=9050,9051,9150,9151,8118,4444
+    network.security.ports.banned="9050,9051,9150,9151,8118,4444"
 
 http://kb.mozillazine.org/Network.security.ports.banned
 
 
+- CSS FINGERPRINTING
+
+Block fingerprinting with CSS-technology (deny to check hight and widht of browser's window). 
+
+    privacy.resistFingerprinting=true
+
+**Attention:** Be carefull to create this strings manually in old versions of Firefox (possible don't working).
+
+
+- E-TAGS FINGERPRINTING
+
+The E-Tag (entity tag) is part of HTTP-header. An E-Tags is an opaque identifier assigned by a web server to a specific version of a resource found at a URL. E-Tags are similar to fingerprints. E-Tags are saved on a computer's cache even if cookies are deleted. Some programms have exploited this fact to make an E-Tags "act" like a cookie. To prevent possible fingerprinting you must deny HDD-cache and(!) RAM-cache globally. 
+
+If you prefer to use RAM-cache, you must to reboot Firefox as often as you can.
+
+
 - MULTIMEDIA
+
+Block WebGL to disable fingerprinting (OR if you have some problems with video). WebGL can reveal information about the video CPU and speed:
+
+    webgl.disable-extensions=true
+    webgl.disabled=true
+    webgl.force-enabled=false
+    webgl.min_capability_mode=true
+
+**Attention:** This strings are not the same in different versions of Firefox (or may be absent in early versions): 
+
+    webgl.disable-debug-renderer-info=true (old versions)
+
+OR
+
+    webgl.enable-debug-renderer-info=false (since FF 42)
 
 Block Mozilla Video Statistics API extensions:
 
     media.video_stats.enabled=false
 
 https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement#Gecko-specific_properties
-
-Block WebGL (if you have some problems with video, other hardware, etc.):
-
-    webgl.disable-extensions=true
-    webgl.disabled=true
-    webgl.force-enabled=false
-    webgl.min_capability_mode=true
 
 Deny OffscreenCanvas. The OffscreenCanvas interface provides a canvas that can be rendered off screen. It is available in both, the window and in a worker context. This API is currently implemented for WebGL1 and WebGL2 contexts only. Switch to:
 
@@ -538,11 +551,28 @@ Block codecs:
     media.wave.enabled=false
     media.webm.enabled=false
     media.webvtt.enabled=false
-    media.gmp-gmpopenh264.provider.enabled=false
-    media.gmp-provider.enabled=false
-    media.webaudio.enabled=false  (maybe obsolete)
+    media.webaudio.enabled=false   (maybe obsolete)
+    media.fragmented-mp4.gmp.enabled=false
+    media.fragmented-mp4.enabled=false    (maybe obsolete)
 
 https://support.mozilla.org/en-US/questions/992868
+
+Deny H.264-codec and block possible downloads and autoupdates (and sertificates' check):
+
+    media.gmp-gmpopenh264.enabled=false
+    media.gmp-manager.url=
+    media.gmp-manager.log=false
+
+    media.gmp-gmpopenh264.autoupdate=false
+    media.gmp-provider.enabled=false
+    media.gmp-gmpopenh264.provider.enabled=false
+    media.gmp-manager.certs.1.commonName=
+    media.gmp-manager.certs.1.issuerName=
+    media.gmp-manager.certs.2.commonName=
+    media.gmp-manager.certs.2.issuerName=
+
+https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_openh264-codec
+
 
 Block Web Speech API. The Web Speech API has two parts: SpeechSynthesis (Text-to-Speech), and SpeechRecognition (Asynchronous Speech Recognition):
 
@@ -552,7 +582,7 @@ Block Web Speech API. The Web Speech API has two parts: SpeechSynthesis (Text-to
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
 
 
-- PLUGINS (FLASH, JAVA)
+- PLUGINS (FLASH, JAVA), etc
 
 Deny plugins. A plugin is a piece of software that displays internet content that Firefox is not designed to display. This usually includes video, audio, online games and presentations that are made in patented (proprietary, non-free) formats: Adobe Flash, Apple QuickTime, Microsoft Silverlight; special software for download. 
 
@@ -600,6 +630,13 @@ Stop message "Would you like to install the plugin needed to display the media o
     plugins.notifyMissingFlash=false
 
 https://support.mozilla.org/en-US/questions/969127
+
+To prevent scanning the directories specified in the Windows registry for Plugin ID (PLID):
+
+    plugin.scan.plid.all=false
+
+http://kb.mozillazine.org/Plugin_scanning
+
 
 - SESSIONS, HISTORY
 
@@ -696,11 +733,15 @@ http://kb.mozillazine.org/Browser.bookmarks.max_backups
 
 **Attention:** If you have Firefox for Android or for iOS (RAM less than 2 Gb), don't change any settings!
 
+DENY CACHE GLOBALLY:
+
 Don't cache HTTP or HTTPS files:
 
-    network.http.use-cache=false
+    network.http.use-cache=false  (maybe obsolete since FF 45)
 
 http://kb.mozillazine.org/Network.http.use-cache
+
+DENY HDD-CACHE:
 
 Don't store cache on the hard drive:
 
@@ -735,11 +776,15 @@ http://kb.mozillazine.org/Browser.cache.disk.capacity
 
 **Attention:** Switch "browser.cache.disk.smart_size.enabled" to false.
 
+ALLOW RAM-CACHE:
+
 Allow decoded images, chrome, and secure pages to be cached in memory.
 
     browser.cache.memory.enable=true
 
 http://kb.mozillazine.org/Browser.cache.memory.enable
+
+**Atention:** RAM cache (browser.cache.memory.enable=true) don't work if you deny cache globally (network.http.use-cache=false)
 
 Automatically decide the maximum memory to use to cache decoded images, messages, and chrome based on the total amount of RAM.
 
@@ -751,11 +796,9 @@ Possible values:
 
 Any positive integer - maximum amount of memory in KB to use to cache decoded images and chrome (1 MB = 1024 KB).
 
-Atention: Switch "browser.cache.memory.enable" to true.
+**Atention:** Switch "browser.cache.memory.enable" to true.
 
 http://kb.mozillazine.org/Browser.cache.memory.capacity
-
-**Attention:** If you want to disable cache in RAM and(!) on HDD, it's big mistake!
 
 
 - GEO-IP
@@ -1026,6 +1069,12 @@ Deny to downloading web-fonts. The major concern with the introduction of this f
     gfx.font_rendering.opentype_svg.enabled=false
 
 https://wiki.mozilla.org/Firefox3.1/Downloadable_Fonts_Security_Review
+
+Deny current document to specify fonts to use:
+
+    browser.display.use_document_fonts=0
+
+http://kb.mozillazine.org/About:config_entries
 
 
 - TILES
