@@ -607,9 +607,9 @@ To deny one, set:
 
 Permissible settings:
 
-    plugin.state.название_плагина=0 (blocked);
-    plugin.state.название_плагина=1 (ask);
-    plugin.state.название_плагина=2 (always on).
+    plugin.state.plugins_name=0 (blocked);
+    plugin.state.plugins_name=1 (ask);
+    plugin.state.plugins_name=2 (always on).
 
 Deny Plugin-container. Each plugin are loaded separately from Firefox in a plugin-container.exe process, allowing the main Firefox process (firefox.exe) to stay open if a plugin crashes. Plugin-container needs a lot of RAM:
 
@@ -733,7 +733,7 @@ http://kb.mozillazine.org/Browser.bookmarks.max_backups
 
 **Attention:** If you have Firefox for Android or for iOS (RAM less than 2 Gb), don't change any settings!
 
-DENY CACHE GLOBALLY:
+DENY CACHE GLOBALLY
 
 Don't cache HTTP or HTTPS files:
 
@@ -741,7 +741,7 @@ Don't cache HTTP or HTTPS files:
 
 http://kb.mozillazine.org/Network.http.use-cache
 
-DENY HDD-CACHE:
+DENY HDD-CACHE
 
 Don't store cache on the hard drive:
 
@@ -1403,7 +1403,7 @@ Block "enhanced page":
     browser.newtabpage.enabled=false
     browser.newtabpage.enhanced=false
     browser.newtabpage.pinned=
-    browser.startup.homepage=about:blank ("пустая страница"; рекомендуется)
+    browser.startup.homepage=about:blank ("blank page"; recommended)
     startup.homepage_welcome_url=
 
 Deny smooth scrolling for the corresponding arrowscrollbox. Switch to:
