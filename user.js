@@ -1,6 +1,6 @@
 ﻿// This is ABC-sorted lists of preferences
 //
-// ATTENTION! Don't copy this file to the new Firefox profile! 
+// ATTENTION! Don't copy this EXAMPLE file to the new Firefox profile! 
 // Please insert preferred strings in about:config manually, one-by-one!
 //
 // CHECK IT!
@@ -155,8 +155,8 @@ user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
 user_pref("dom.ipc.plugins.reportCrashURL", false);
 user_pref("dom.mobileconnection.enabled", false);
 user_pref("dom.mozAlarms.enabled", false);
-user_pref("dom.mozApps.used", false);
 user_pref("dom.mozApps.signed_apps_installable_from", "");
+user_pref("dom.mozApps.used", false);
 user_pref("dom.mozContacts.enabled", false);
 user_pref("dom.mozNetworkStats.enabled", false);
 user_pref("dom.mozSettings.enabled", false);
@@ -194,7 +194,6 @@ user_pref("general.useragent.locale", "en-US");
 user_pref("general.useragent.override", "");
 user_pref("geo.enabled", false);
 user_pref("geo.wifi.uri", "");
-user_pref("geo.wifi.uri", "");
 user_pref("gfx.downloadable_fonts.enabled", false);
 user_pref("gfx.downloadable_fonts.woff2.enabled", false);
 user_pref("gfx.font_rendering.opentype_svg.enabled", false);
@@ -230,11 +229,21 @@ user_pref("loop.support_url", "");
 user_pref("loop.throttled2", false);
 user_pref("media.autoplay.enabled", false);
 user_pref("media.eme.enabled", false);
+user_pref("media.fragmented-mp4.enabled", false);
+user_pref("media.fragmented-mp4.gmp.enabled", false);
 user_pref("media.getusermedia.browser.enabled", false);
 user_pref("media.getusermedia.screensharing.allowed_domains", "");
 user_pref("media.getusermedia.screensharing.enabled", false);
 user_pref("media.gmp-eme-adobe.enabled", false);
+user_pref("media.gmp-gmpopenh264.autoupdate", false);
+user_pref("media.gmp-gmpopenh264.enabled", false);
 user_pref("media.gmp-gmpopenh264.provider.enabled", false);
+user_pref("media.gmp-manager.certs.1.commonName", "");
+user_pref("media.gmp-manager.certs.1.issuerName", "");
+user_pref("media.gmp-manager.certs.2.commonName", "");
+user_pref("media.gmp-manager.certs.2.issuerName", "");
+user_pref("media.gmp-manager.log", false);
+user_pref("media.gmp-manager.url", "");
 user_pref("media.gmp-provider.enabled", false);
 user_pref("media.http.spdy.enabled", false);
 user_pref("media.navigator.enabled", false);
@@ -276,18 +285,18 @@ user_pref("network.predictor.enable-hover-on-ssl", false);
 user_pref("network.predictor.enabled", false);
 user_pref("network.predictor.max-db-size", 0);
 user_pref("network.prefetch-next", false);
-user_pref("network.proxy.ftp_port", 8118);
-user_pref("network.proxy.ftp", "localhost");
-user_pref("network.proxy.http_port", 8118);
-user_pref("network.proxy.http", "localhost");
+// user_pref("network.proxy.ftp_port", 8118);
+// user_pref("network.proxy.ftp", "localhost");
+// user_pref("network.proxy.http_port", 8118);
+// user_pref("network.proxy.http", "localhost");
 user_pref("network.proxy.no_proxies_on", "localhost, 127.0.0.1");
-user_pref("network.proxy.socks_port", 9050);
+// user_pref("network.proxy.socks_port", 9050);
 user_pref("network.proxy.socks_remote_dns", true);
-user_pref("network.proxy.socks", "localhost");
-user_pref("network.proxy.ssl_port", 8118);
-user_pref("network.proxy.ssl", "localhost");
-user_pref("network.proxy.type", 1);
-user_pref("network.security.ports.banned", 9050,9051,9150,9151,8118,4444);
+// user_pref("network.proxy.socks", "localhost");
+// user_pref("network.proxy.ssl_port", 8118);
+// user_pref("network.proxy.ssl", "localhost");
+user_pref("network.proxy.type", 0);
+// user_pref("network.security.ports.banned", "9050,9051,9150,9151,8118,4444");
 user_pref("network.tickle-wifi.enabled", false);
 user_pref("nglayout.enable_drag_images", false);
 user_pref("pageThumbs.enabled", false);
