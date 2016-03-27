@@ -491,11 +491,11 @@ http://kb.mozillazine.org/Network.security.ports.banned
 
 - CSS FINGERPRINTING
 
-Block fingerprinting with CSS-technology (deny to check hight and widht of browser's window). 
+Block fingerprinting with CSS-technology or method "window.screen" (Don't allow to check hight and widht of browser's window). 
 
     privacy.resistFingerprinting=true
 
-**Attention:** Be carefull to create this strings manually in old versions of Firefox (possible don't working).
+**Attention:** Be carefull to create this strings manually in old versions of Firefox (maybe don't working).
 
 
 - E-TAGS FINGERPRINTING
